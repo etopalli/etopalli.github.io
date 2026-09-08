@@ -1,30 +1,157 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Erjona Topalli</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/style/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-        		<li><a href="/resume">Resume</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Erjona Topalli — Senior Software Engineer</title>
+	<meta name="description" content="Erjona Topalli is a senior software engineer in Cambridge, MA, working on frontend platform engineering with React, TypeScript, and Preact.">
+	<meta name="author" content="Erjona Topalli">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Erjona Topalli — Senior Software Engineer">
+	<meta property="og:description" content="Frontend platform engineering, component architecture, and rendering performance.">
+	<meta property="og:url" content="https://erjona.me/">
+
+	<link rel="canonical" href="https://erjona.me/">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>E</text></svg>">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+	<div class="wrap">
+		<nav class="site-nav">
+			<a class="mark" href="/">Erjona Topalli</a>
+			<a class="nav-link" href="/" aria-current="page">Home</a>
+			<a class="nav-link" href="/resume.html">Résumé</a>
+			<a class="nav-link" href="/blog.html">Blog</a>
 		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Welcome to my page</h1>
-				<p> Hi, I'm Erjona. Thanks for visiting my page.</p> 
-				
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:erjonatpl@gmail.com">Email me</a></li>
-        		<li><a href="https://github.com/etopalli">This is my github account</a></li>
-			</ul>
+
+		<header class="hero">
+			<h1>Erjona Topalli</h1>
+			<p class="tagline">
+				<strong>Senior software engineer</strong> in Cambridge, MA. I work on frontend
+				platform engineering at Oracle — building visualization components in Preact and
+				TypeScript for a toolkit used by 6,000+ developers, and making them render faster.
+			</p>
+			<div class="actions">
+				<a class="btn" href="/Topalli_Erjona_Sr_SWE.pdf" download>
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M12 3v12"></path>
+						<path d="m7 12 5 5 5-5"></path>
+						<path d="M5 21h14"></path>
+					</svg>
+					Download résumé
+				</a>
+				<a class="btn btn-ghost" href="/resume.html">Read it here</a>
+			</div>
+		</header>
+
+		<main>
+			<section>
+				<p class="eyebrow">What I do</p>
+				<div class="prose">
+					<p>
+						Most of my work lives at the boundary between design systems and browser
+						performance: defining component APIs that stay stable for years, migrating
+						legacy implementations without breaking the applications built on them, and
+						cutting rendering cost where it actually shows up for users.
+					</p>
+					<p>
+						I care a lot about accessibility, incremental migration paths, and leaving
+						code that the next engineer can reason about.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<p class="eyebrow">Selected work</p>
+
+				<div class="entry">
+					<div class="entry-head">
+						<h3>Oracle JET visualization components</h3>
+						<span class="meta">2017 — present</span>
+					</div>
+					<p class="role">Senior Software Engineer</p>
+					<ul>
+						<li>Led the migration of legacy visualization components to Preact while keeping backward compatibility for 6,000+ internal developers.</li>
+						<li>Improved rendering performance of core components by up to 45% through targeted optimizations and redesign.</li>
+						<li>Replaced legacy SVG rendering with native HTML where appropriate to cut rendering overhead.</li>
+						<li>Partnered with UX and accessibility specialists to keep components WCAG compliant.</li>
+					</ul>
+				</div>
+
+				<div class="entry">
+					<div class="entry-head">
+						<h3>Oaktown Boulders route management platform</h3>
+						<span class="meta">2020 — 2022</span>
+					</div>
+					<p class="role">Founding Engineer</p>
+					<ul>
+						<li>Designed and built a full-stack platform for managing climbing routes at a rock climbing gym.</li>
+						<li>Built an interactive wall editor letting staff create and modify routes directly on a visual layout.</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<p class="eyebrow">Toolkit</p>
+				<dl class="grid">
+					<div>
+						<dt>Languages</dt>
+						<dd>TypeScript, JavaScript, Python, Java</dd>
+					</div>
+					<div>
+						<dt>Frontend</dt>
+						<dd>React, Preact, D3.js, HTML5, CSS3</dd>
+					</div>
+					<div>
+						<dt>Backend</dt>
+						<dd>Node.js, Express, REST APIs, MongoDB</dd>
+					</div>
+					<div>
+						<dt>Cloud &amp; tools</dt>
+						<dd>AWS, Git, Cursor, Figma</dd>
+					</div>
+				</dl>
+			</section>
+
+			<section>
+				<p class="eyebrow">Elsewhere</p>
+				<ul class="link-list">
+					<li>
+						<a href="mailto:erjonatpl@gmail.com">
+							<span class="title">Email</span>
+							<span class="meta">erjonatpl@gmail.com</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/etopalli" rel="me">
+							<span class="title">GitHub</span>
+							<span class="meta">@etopalli</span>
+						</a>
+					</li>
+					<li>
+						<a href="/blog.html">
+							<span class="title">Blog</span>
+							<span class="meta">Occasional writing</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<span>© 2026 Erjona Topalli</span>
+			<nav>
+				<a href="/resume.html">Résumé</a>
+				<a href="mailto:erjonatpl@gmail.com">Email</a>
+				<a href="https://github.com/etopalli">GitHub</a>
+			</nav>
 		</footer>
-	</body>
+	</div>
+</body>
 </html>
