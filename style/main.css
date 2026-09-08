@@ -3,31 +3,35 @@
    --------------------------------------------------------------- */
 
 :root {
-    --serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
-    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --serif: "Baskervville", ui-serif, Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+        Arial, sans-serif;
 
-    --bg: #fcfbf9;
-    --bg-tint: #f4efe8;
-    --text: #171614;
-    --muted: #605b54;
-    --faint: #948d84;
-    --line: #e8e3db;
-    --line-soft: #f0ece5;
-    --accent: #a2543c;
+    --bg: #f1f0ec;
+    --surface: #fafdf0;
+    --text: #171717;
+    --muted: #56534e;
+    --faint: #8a857d;
+    --line: #e1ded6;
+    --accent: #c96f2d;
+    --sand: #f4e0ba;
+    --on-accent: #fffaf3;
 
     --measure: 42rem;
+    --radius: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #100f0e;
-        --bg-tint: #1a1817;
-        --text: #f0ede8;
-        --muted: #a8a29a;
-        --faint: #7a746d;
-        --line: #2a2725;
-        --line-soft: #1f1d1b;
-        --accent: #e09877;
+        --bg: #131210;
+        --surface: #1c1b17;
+        --text: #f1f0ec;
+        --muted: #aaa49b;
+        --faint: #7c766d;
+        --line: #2b2924;
+        --accent: #e0894a;
+        --sand: #5c4a2c;
+        --on-accent: #1a1409;
     }
 }
 
@@ -46,17 +50,11 @@ body {
     margin: 0;
     padding: 0 1.75rem;
     background: var(--bg);
-    background-image: radial-gradient(
-        90rem 40rem at 50% -12rem,
-        var(--bg-tint) 0%,
-        transparent 65%
-    );
-    background-repeat: no-repeat;
     color: var(--text);
     font-family: var(--sans);
-    font-size: 17px;
+    font-size: 16.5px;
     line-height: 1.7;
-    letter-spacing: -0.004em;
+    letter-spacing: -0.002em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -69,7 +67,7 @@ body {
 
 ::selection {
     background: var(--accent);
-    color: var(--bg);
+    color: var(--on-accent);
 }
 
 /* --- links ---------------------------------------------------- */
@@ -79,7 +77,7 @@ a {
     text-decoration: none;
     text-underline-offset: 0.22em;
     transition: color 0.18s ease, text-decoration-color 0.18s ease,
-        opacity 0.18s ease;
+        background 0.18s ease, border-color 0.18s ease;
 }
 
 a:hover {
@@ -89,7 +87,7 @@ a:hover {
 .prose a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-decoration-color: var(--line);
+    text-decoration-color: var(--faint);
 }
 
 .prose a:hover {
@@ -98,7 +96,7 @@ a:hover {
 
 :focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 4px;
+    outline-offset: 3px;
     border-radius: 2px;
 }
 
@@ -108,19 +106,20 @@ a:hover {
     display: flex;
     align-items: baseline;
     gap: 1.5rem;
-    padding: 2.5rem 0 0;
+    padding: 2.25rem 0 0;
 }
 
 .site-nav .mark {
     font-family: var(--serif);
-    font-size: 1.2rem;
-    letter-spacing: 0.005em;
+    font-size: 1.25rem;
     margin-right: auto;
 }
 
 .site-nav .nav-link {
-    font-size: 0.8125rem;
-    letter-spacing: 0.01em;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
     color: var(--faint);
 }
 
@@ -135,24 +134,24 @@ a:hover {
 /* --- hero ----------------------------------------------------- */
 
 .hero {
-    padding: 6.5rem 0 1rem;
+    padding: 5.5rem 0 1rem;
 }
 
 .hero h1 {
     font-family: var(--serif);
-    font-size: clamp(3rem, 10vw, 4.75rem);
+    font-size: clamp(3rem, 9.5vw, 4.5rem);
     font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.025em;
-    margin: 0 0 1.5rem;
+    line-height: 1.06;
+    letter-spacing: -0.012em;
+    margin: 0 0 1.35rem;
 }
 
 .hero .tagline {
-    font-size: 1.125rem;
-    line-height: 1.6;
+    font-size: 1.0625rem;
+    line-height: 1.65;
     color: var(--muted);
-    margin: 0 0 2.5rem;
-    max-width: 30rem;
+    margin: 0 0 2.25rem;
+    max-width: 31rem;
     text-wrap: pretty;
 }
 
@@ -161,28 +160,20 @@ a:hover {
     font-weight: 500;
 }
 
-.hero .tagline em {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.2em;
-    color: var(--text);
-    letter-spacing: 0;
-}
-
 /* --- headings & text ------------------------------------------ */
 
 h2 {
     font-family: var(--serif);
-    font-size: 1.625rem;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.008em;
+    line-height: 1.15;
     margin: 0 0 1.25rem;
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 600;
-    letter-spacing: -0.005em;
     margin: 0;
 }
 
@@ -203,41 +194,39 @@ p {
     margin-bottom: 0;
 }
 
-/* section label: short rule + small caps */
+/* section label: orange glyph + letterspaced caps */
 
 .eyebrow {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 0.6rem;
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--faint);
-    margin: 0 0 2rem;
+    margin: 0 0 1.75rem;
 }
 
 .eyebrow::before {
-    content: "";
-    width: 1.5rem;
-    height: 1px;
-    background: var(--accent);
-    flex: none;
-    opacity: 0.6;
+    content: "\25C6"; /* ◆ */
+    color: var(--accent);
+    font-size: 0.5rem;
+    line-height: 1;
 }
 
 .meta {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--faint);
     font-variant-numeric: tabular-nums;
-    letter-spacing: 0;
+    letter-spacing: 0.01em;
 }
 
 /* --- sections ------------------------------------------------- */
 
 section {
-    padding: 4rem 0;
-    border-top: 1px solid var(--line-soft);
+    padding: 3.25rem 0;
+    border-top: 1px solid var(--line);
 }
 
 section:first-of-type {
@@ -249,7 +238,7 @@ section:first-of-type {
 .actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.55rem;
     align-items: center;
 }
 
@@ -257,32 +246,32 @@ section:first-of-type {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.65rem 1.25rem;
+    padding: 0.8rem 1.1rem;
     border: 1px solid var(--text);
-    border-radius: 999px;
+    border-radius: var(--radius);
     background: var(--text);
     color: var(--bg);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: -0.005em;
-    transition: transform 0.18s ease, box-shadow 0.18s ease,
-        background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    line-height: 1.2;
+    transition: background 0.18s ease, color 0.18s ease,
+        border-color 0.18s ease, transform 0.18s ease;
 }
 
 .btn:hover {
-    color: var(--bg);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.35);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+    transform: translateY(-1px);
 }
 
 .btn:active {
-    transform: translateY(0);
+    transform: none;
 }
 
 .btn svg {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
     flex: none;
     transition: transform 0.18s ease;
 }
@@ -295,27 +284,35 @@ section:first-of-type {
     background: transparent;
     color: var(--text);
     border-color: var(--line);
-    box-shadow: none;
 }
 
 .btn-ghost:hover {
-    color: var(--accent);
+    background: var(--surface);
     border-color: var(--accent);
-    box-shadow: none;
+    color: var(--accent);
 }
 
 .btn-ghost:hover svg {
     transform: none;
 }
 
-/* --- resume entries ------------------------------------------- */
+/* --- entry cards ---------------------------------------------- */
 
 .entry {
-    margin-bottom: 2.75rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 0.85rem;
+    transition: border-color 0.18s ease;
 }
 
 .entry:last-child {
     margin-bottom: 0;
+}
+
+.entry:hover {
+    border-color: var(--accent);
 }
 
 .entry-head {
@@ -323,7 +320,7 @@ section:first-of-type {
     flex-wrap: wrap;
     gap: 0.15rem 1rem;
     align-items: baseline;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
 }
 
 .entry-head h3 {
@@ -331,7 +328,10 @@ section:first-of-type {
 }
 
 .entry .role {
-    font-size: 0.9375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--accent);
     margin: 0 0 0.9rem;
 }
@@ -345,10 +345,10 @@ section:first-of-type {
 
 .entry ul li {
     position: relative;
-    padding-left: 1.15rem;
-    margin-bottom: 0.55rem;
-    font-size: 0.9375rem;
-    line-height: 1.6;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
     text-wrap: pretty;
 }
 
@@ -360,10 +360,56 @@ section:first-of-type {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.78em;
-    width: 6px;
-    height: 1px;
-    background: var(--faint);
+    top: 0.72em;
+    width: 4px;
+    height: 4px;
+    background: var(--sand);
+    border: 1px solid var(--faint);
+}
+
+/* --- accent CTA card ----------------------------------------- */
+
+.cta {
+    background: var(--accent);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    color: var(--on-accent);
+}
+
+.cta .eyebrow {
+    color: var(--on-accent);
+    opacity: 0.75;
+    margin-bottom: 1rem;
+}
+
+.cta .eyebrow::before {
+    color: var(--on-accent);
+}
+
+.cta h2 {
+    color: var(--on-accent);
+    margin-bottom: 0.6rem;
+}
+
+.cta p {
+    color: var(--on-accent);
+    opacity: 0.85;
+    font-size: 0.9375rem;
+    max-width: 26rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta .btn {
+    background: var(--on-accent);
+    border-color: var(--on-accent);
+    color: var(--accent);
+}
+
+.cta .btn:hover {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--on-accent);
+    transform: translateY(-1px);
 }
 
 /* --- skills --------------------------------------------------- */
@@ -371,23 +417,21 @@ section:first-of-type {
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    gap: 1.75rem 2rem;
+    gap: 1.6rem 2rem;
     margin: 0;
 }
 
-/* groups with long labels get the full row */
 .skill-group--wide {
     grid-column: 1 / -1;
 }
 
-.skill-group dt,
-.grid dt {
+.skill-group dt {
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.11em;
     text-transform: uppercase;
     color: var(--faint);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.65rem;
 }
 
 .skill-group dd {
@@ -407,8 +451,9 @@ section:first-of-type {
     font-size: 0.8125rem;
     line-height: 1.5;
     padding: 0.2rem 0.55rem;
+    background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: 5px;
     color: var(--muted);
     transition: border-color 0.18s ease, color 0.18s ease;
 }
@@ -418,33 +463,17 @@ section:first-of-type {
     color: var(--text);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    gap: 1.75rem 2rem;
-    margin: 0;
-}
-
-.grid dd {
-    margin: 0;
-    font-size: 0.9375rem;
-    color: var(--muted);
-}
-
-/* --- link list ------------------------------------------------ */
+/* --- ledger rows (contact / links) ---------------------------- */
 
 .link-list {
     margin: 0;
     padding: 0;
     list-style: none;
+    border-top: 1px solid var(--line);
 }
 
 .link-list li {
-    border-bottom: 1px solid var(--line-soft);
-}
-
-.link-list li:first-child {
-    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line);
 }
 
 .link-list a {
@@ -452,22 +481,21 @@ section:first-of-type {
     flex-wrap: wrap;
     gap: 0.1rem 1rem;
     align-items: baseline;
-    padding: 1.1rem 0.25rem;
-    transition: padding 0.18s ease, color 0.18s ease;
+    padding: 0.95rem 0.5rem;
 }
 
 .link-list a:hover {
-    padding-left: 0.6rem;
+    background: var(--surface);
 }
 
 .link-list a .title {
     margin-right: auto;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
 }
 
 .link-list a .arrow {
     color: var(--faint);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     opacity: 0;
     transform: translateX(-4px);
     transition: opacity 0.18s ease, transform 0.18s ease;
@@ -485,8 +513,8 @@ article h1 {
     font-family: var(--serif);
     font-size: clamp(2.25rem, 7vw, 3.25rem);
     font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
     margin: 0 0 0.85rem;
 }
 
@@ -496,23 +524,23 @@ article .prose {
 
 article .prose p:first-of-type::first-letter {
     font-family: var(--serif);
-    font-size: 3.4em;
-    line-height: 0.82;
+    font-size: 3.6em;
+    line-height: 0.84;
     float: left;
-    padding: 0.06em 0.09em 0 0;
-    color: var(--text);
+    padding: 0.06em 0.1em 0 0;
+    color: var(--accent);
 }
 
 /* --- footer --------------------------------------------------- */
 
 .site-footer {
     border-top: 1px solid var(--line);
-    padding: 2.5rem 0 4rem;
+    padding: 2rem 0 3.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
     align-items: baseline;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--faint);
 }
 
@@ -579,11 +607,11 @@ article .prose p:first-of-type::first-letter {
     }
 
     .hero {
-        padding-top: 4.5rem;
+        padding-top: 4rem;
     }
 
     .site-nav {
-        gap: 1.15rem;
+        gap: 1.1rem;
     }
 
     .site-nav .mark {
@@ -592,7 +620,12 @@ article .prose p:first-of-type::first-letter {
     }
 
     section {
-        padding: 3rem 0;
+        padding: 2.75rem 0;
+    }
+
+    .entry,
+    .cta {
+        padding: 1.25rem 1.15rem;
     }
 }
 
@@ -601,7 +634,8 @@ article .prose p:first-of-type::first-letter {
 @media print {
     .site-nav,
     .site-footer,
-    .actions {
+    .actions,
+    .cta {
         display: none;
     }
 
@@ -618,6 +652,12 @@ article .prose p:first-of-type::first-letter {
 
     section {
         padding: 0.85rem 0;
+        break-inside: avoid;
+    }
+
+    .entry {
+        background: none;
+        border-color: #ccc;
         break-inside: avoid;
     }
 }
