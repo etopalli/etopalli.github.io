@@ -109,9 +109,7 @@ a:hover {
     padding: 2.25rem 0 0;
 }
 
-.site-nav .mark {
-    font-family: var(--serif);
-    font-size: 1.25rem;
+.site-nav .nav-link:first-child {
     margin-right: auto;
 }
 
@@ -531,6 +529,58 @@ article .prose p:first-of-type::first-letter {
     color: var(--accent);
 }
 
+/* --- playground ----------------------------------------------- */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    min-height: 14rem;
+    padding: 1.4rem 1.5rem 1.35rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+a.project:hover {
+    border-color: var(--accent);
+    color: inherit;
+    transform: translateY(-2px);
+}
+
+.project .eyebrow {
+    margin-bottom: 1.1rem;
+}
+
+.project h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0 0 0.65rem;
+}
+
+.project p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-wrap: pretty;
+}
+
+.project .meta {
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+
 /* --- footer --------------------------------------------------- */
 
 .site-footer {
@@ -614,18 +664,18 @@ article .prose p:first-of-type::first-letter {
         gap: 1.1rem;
     }
 
-    .site-nav .mark {
-        width: 100%;
-        margin: 0 0 0.35rem;
-    }
-
     section {
         padding: 2.75rem 0;
     }
 
     .entry,
-    .cta {
+    .cta,
+    .project {
         padding: 1.25rem 1.15rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
     }
 }
 
