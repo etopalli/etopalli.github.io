@@ -85,13 +85,15 @@ a:hover {
 }
 
 .prose a {
+    color: var(--accent);
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-decoration-color: var(--faint);
+    text-decoration-color: var(--accent);
 }
 
 .prose a:hover {
-    text-decoration-color: var(--accent);
+    color: var(--text);
+    text-decoration-color: var(--text);
 }
 
 :focus-visible {
@@ -529,7 +531,7 @@ article .prose p:first-of-type::first-letter {
     color: var(--accent);
 }
 
-/* --- playground ----------------------------------------------- */
+/* --- projects ----------------------------------------------- */
 
 .projects {
     display: grid;
